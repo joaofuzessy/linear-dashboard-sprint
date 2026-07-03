@@ -1,7 +1,7 @@
 # Como usar:
 
 1 - Abrir o arquivo `index.html` no navegador
-2 - Inserir a API Key pessoal do Linear (Settings → API → Personal API keys → Create key)
+2 - Inserir a API Key pessoal do Linear (linear.app/settings/account/security → Personal API keys → Create key)
 3 - Informar o Team Key do seu time no Linear (ex: ENG) e clicar em Conectar
 
 O dashboard tem as funcionalidades: seletor de ciclo, CAPEX/OPEX, cycle time, tempo por status, histórico de bloqueios e exportar PDF.

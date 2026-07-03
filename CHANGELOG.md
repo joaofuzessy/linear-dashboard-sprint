@@ -28,5 +28,8 @@ Registro das mudanças relevantes do projeto. As datas seguem o formato AAAA-MM-
 - JS: objeto `COLORS` como fonte única para os estilos calculados em runtime, e `STATE_STYLES` para as pílulas de status. As funções `stateStyle`, `barColor`, `compColor`, `ctCard`, a legenda e os KPIs deixaram de conter cores hardcoded.
 - Observação: a paleta vive em dois lugares por natureza — `:root` (CSS estático) e `COLORS` (estilos inline dinâmicos do JS); ambos devem ser mantidos em sincronia.
 
+### Corrigido — Link da Personal API key
+- Atualizado o endereço para gerar a Personal API key no Linear, de `linear.app/settings/api` para `linear.app/settings/account/security` (na tela de setup e no `README.md`). Usada a URL sem o slug do workspace, válida para qualquer usuário.
+
 ### Removido — Código morto
 - Removida a função `isBlocked`, que não era mais utilizada (o cálculo de bloqueio real usa o histórico de estados).
