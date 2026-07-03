@@ -10,4 +10,4 @@ Uma ressalva: alguns navegadores bloqueiam requisições de rede quando o arquiv
 
 `python3 -m http.server`
 
-e acessar http://localhost:8000.Lmsgc 
+e acessar http://localhost:8000
