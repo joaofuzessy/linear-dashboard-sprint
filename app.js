@@ -192,15 +192,24 @@ async function init() {
     const data = await gql(`
       query($id: String!) {
         team(id: $id) {
+          activeCycle { id }
           cycles(first: 50) {
             nodes {
-              id title number startsAt endsAt isCurrent
+              id name number startsAt endsAt
               completedIssueCountHistory issueCountHistory
             }
           }
         }
       }
     `, { id: TEAM_ID_RESOLVED });
+
+    // The Cycle type has no `title`/`isCurrent`; derive them here so the
+    // rest of the code can keep using c.title / c.isCurrent.
+    const activeCycleId = data.team?.activeCycle?.id || null;
+    (data.team?.cycles?.nodes || []).forEach(c => {
+      c.title     = c.name || `Ciclo ${c.number}`;
+      c.isCurrent = c.id === activeCycleId;
+    });
 
     const now    = Date.now();
     const cutoff = now - 60 * 86400000;

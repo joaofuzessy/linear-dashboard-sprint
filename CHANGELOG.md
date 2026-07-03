@@ -28,6 +28,9 @@ Registro das mudanças relevantes do projeto. As datas seguem o formato AAAA-MM-
 - JS: objeto `COLORS` como fonte única para os estilos calculados em runtime, e `STATE_STYLES` para as pílulas de status. As funções `stateStyle`, `barColor`, `compColor`, `ctCard`, a legenda e os KPIs deixaram de conter cores hardcoded.
 - Observação: a paleta vive em dois lugares por natureza — `:root` (CSS estático) e `COLORS` (estilos inline dinâmicos do JS); ambos devem ser mantidos em sincronia.
 
+### Corrigido — Query de ciclos incompatível com o schema do Linear
+- A query de inicialização pedia os campos `title` e `isCurrent` no tipo `Cycle`, que não existem no schema do Linear (resultava em `HTTP 400 / GRAPHQL_VALIDATION_FAILED`). Passou a usar `name` e `team.activeCycle`; o título (`title`) e o indicador de ciclo atual (`isCurrent`) são derivados em JS após o fetch, mantendo o restante do código inalterado.
+
 ### Corrigido — Link da Personal API key
 - Atualizado o endereço para gerar a Personal API key no Linear, de `linear.app/settings/api` para `linear.app/settings/account/security` (na tela de setup e no `README.md`). Usada a URL sem o slug do workspace, válida para qualquer usuário.
 
