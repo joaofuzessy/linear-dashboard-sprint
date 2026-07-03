@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cycle Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ───────────────── Setup Screen ───────────────────────── -->
+<div id="setup-screen">
+  <div class="setup-box">
+    <div class="setup-logo">
+      <div class="setup-logo-dot"></div>
+      <span class="setup-logo-txt">Cycle Dashboard</span>
+    </div>
+    <h1>Entrar com Linear</h1>
+    <p>Insira sua API Key pessoal para carregar os dados do Linear diretamente no navegador.</p>
+
+    <div class="setup-field">
+      <label>Linear API Key</label>
+      <input id="api-key-input" type="password" placeholder="lin_api_xxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="setup-field">
+      <label>Team Key</label>
+      <input id="team-key-input" type="text" placeholder="Ex: ENG">
+    </div>
+
+    <button class="setup-connect-btn" id="connect-btn" onclick="connect()">Conectar</button>
+    <div class="setup-error" id="setup-error"></div>
+
+    <div class="setup-hint">
+      Obtenha sua API key em <a href="https://linear.app/settings/api" target="_blank">linear.app/settings/api</a>
+      → Personal API keys → Create key.<br><br>
+      A chave fica somente na memória desta sessão do navegador, nunca é enviada a nenhum servidor externo além do próprio Linear.
+    </div>
+  </div>
+</div>
+
+<!-- ───────────────── Dashboard ──────────────────────────── -->
+<div id="app" style="display:none">
+  <div class="page" id="dashboard">
+    <div class="loading"><div class="spinner"></div>Carregando...</div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
