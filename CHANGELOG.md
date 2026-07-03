@@ -28,6 +28,9 @@ Registro das mudanças relevantes do projeto. As datas seguem o formato AAAA-MM-
 - JS: objeto `COLORS` como fonte única para os estilos calculados em runtime, e `STATE_STYLES` para as pílulas de status. As funções `stateStyle`, `barColor`, `compColor`, `ctCard`, a legenda e os KPIs deixaram de conter cores hardcoded.
 - Observação: a paleta vive em dois lugares por natureza — `:root` (CSS estático) e `COLORS` (estilos inline dinâmicos do JS); ambos devem ser mantidos em sincronia.
 
+### Alterado — Cache-busting de assets
+- Adicionado parâmetro de versão (`?v=2`) aos links de `styles.css` e `app.js` no `index.html`, forçando o navegador a rebaixar os arquivos após cada deploy (evita que versões antigas em cache causem erros já corrigidos). Incrementar o número a cada mudança relevante nesses arquivos.
+
 ### Adicionado — Fluxo de contribuição via Pull Request
 - Adicionado `.github/CODEOWNERS` definindo o owner do projeto (`@joaofuzessy`) como revisor obrigatório de todo o repositório.
 - Configurada proteção da branch `master` no GitHub: merges exigem Pull Request com pelo menos 1 aprovação do code owner (`require_code_owner_reviews`), com dismiss de reviews obsoletas. Push direto na `master` fica bloqueado; contribuições passam a ocorrer via PR aprovado.
